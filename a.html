@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="zh">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+		}
+		ul{
+			background: #fc0;
+			width: 120px;
+		}
+
+		li{
+			width: 120px;
+			height: 32px;
+			list-style: none;
+			margin: 0 0 3px 0;
+			background: #cfc;
+			cursor: pointer;
+		}
+
+		li:hover{
+			background: #fcf;
+		}
+	</style>
+</head>
+<body  onload="test3();">
+	<script>
+		function test(){
+			olis=document.getElementsByTagName('li');
+			for(var i=0;i<olis.length;i++){
+				(function (arg){
+					olis[i].onclick = function (){
+						console.log(olis[arg].innerHTML);
+					}
+				})(i);
+			}
+		}
+
+		function test1(){
+			olis=document.getElementsByTagName('li');
+			for(var i=0;i<olis.length;i++){
+				olis[i].i = i;
+				olis[i].onclick = function (){
+					console.log(this.i);
+				}
+			}
+		}
+
+		function test2(){
+			olis=document.getElementsByTagName('li');
+			for(var i=0;i<olis.length;i++){
+				olis[i].i = i;
+				olis[i].onclick = function (){
+					console.log(this.i);
+				}
+				
+			}
+		}
+
+
+		function test3(){
+			olis=document.getElementsByTagName('li');
+			for(var i=0;i<olis.length;i++){
+				(function (){
+					var temp = i;
+					olis[i].onclick = function (){
+						console.log(temp);
+					}
+				}())
+			}
+		}
+	</script>
+	<ul >
+		<li>第一项</li>
+		<li>第二项</li>
+		<li>第三项</li>
+		<li>第四项</li>
+	</ul>
+
+</body>
+</html>

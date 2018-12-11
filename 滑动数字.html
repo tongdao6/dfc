@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>滑动数字</title>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			font-size: 32px;
+			font-weight: 600;
+			color: white;
+			background: #000;
+		}
+		.wrap{
+			background: #c0c0c0;
+			width: 1em;
+			border: 1px solid #fcc;
+			text-align: center;
+			margin: 10px auto;
+		}
+
+		div{
+			/*display: inline-block;*/
+		}
+
+		.me{
+			color: rgba(255,255,255,1);
+		}
+		
+		.close{
+			color: rgba(255,255,255,0.5);
+		}
+		
+		.far{
+			color: rgba(255,255,255.0.25);
+		}
+
+		.toofar{
+			color: rgba(255,255,255,0.12);
+		}
+
+		.default{
+			color: rgba(255,255,255,0);
+		}
+
+		.divimg{
+			transform: rotate(45deg);
+			transform-origin: 200px 200px;
+			transition: 0.5s;
+			cursor: pointer;
+		}
+
+		.divimg:hover{
+			transform: rotate(90deg);
+			transform-origin: 200px 200px;
+			transition: 0.5s;
+		}
+	</style>
+	<script>
+		function Index(){
+			this.className=["me","close","far","toofar","default"];
+			this.i = 0;
+			init();
+			function init(){
+				this.obj=document.getElementById('wrap');
+				console.log(this.obj.childNodes);
+				setI(4);
+				setColor(4);
+			}
+
+			function setColor(n){
+				for(var k in obj){
+					obj[k].className = this.className[2];
+					console.log(this.i);
+				}
+			}
+
+			function setI(i){
+				this.i = i;
+			}
+		}
+
+	function animate(){
+		
+	}
+	</script>
+</head>
+<body onload="Index();">
+	<div id="wrap" class="wrap"><div>0</div><div>1</div><div>2</div><div>3</div><div>4</div><div>5</div><div>6</div><div>7</div><div>8</div><div>9</div></div>
+
+
+
+	<div  onclick="animate();">
+		<img class="divimg" src="loser.png" alt="" class="img">
+	</div>
+</body>
+</html>
